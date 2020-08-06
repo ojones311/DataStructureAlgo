@@ -12,17 +12,18 @@ console.log(fibonacci(10))
 console.log(fibonacci(8))
 
 // Must fix the return 
-// const memoFib = (num, obj) =>{
-//     obj = obj || {}
-//     if(obj[num]){
-//         console.log('memo obj',obj)
-//         return obj[num]
-//     }
-//     if(num <= 1){
-//         return 1
-//     }
-//     return obj[num] = memoFib(num-1, obj) + memoFib(num-2, obj)
-// }
+const memoFib = (num, obj) =>{
+    obj = obj || {}
+    if(obj[num]){
+        console.log('memo obj',obj)
+        return obj[num]
+    }
+    if(num <= 1){
+        return 1
+    }else{
+        return obj[num] = memoFib(num-1, obj) + memoFib(num-2, obj)
+   }   
+}
 
 // console.log(memoFib(4))
 // console.log(memoFib(14))
