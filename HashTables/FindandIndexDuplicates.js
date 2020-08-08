@@ -1,5 +1,6 @@
 //Function take in an array and finds and indexes the duplicates in the arr
 
+//gotta fix this !
 const findAndIndexDupes = (arr) => {
 	let obj = {}
 	for(elem of arr){
