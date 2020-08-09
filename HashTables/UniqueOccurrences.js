@@ -5,7 +5,6 @@
 // Input: arr = [1,2]
 // Output: false
 
-
 const uniqueOccurences = (arr) => {
     let obj = {}
     for (let i = 0; i < arr.length; i++){
@@ -20,15 +19,10 @@ const uniqueOccurences = (arr) => {
     for (num in obj){
         checker.push(obj[num])
     }
+    console.log(checker)
 
-    const unique = (elem, index, array) => {
-        for (var i = 0; i < index; i++) {
-          if (array[i] === elem) return false;
-        }
-        return true;
-      };
-
-   let solution = checker.filter(unique)
+   let solution = [...new Set(checker)]
+   console.log(solution)
  
    return solution.length == checker.length
 }
