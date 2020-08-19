@@ -38,13 +38,14 @@ listB.add(11)
 listB.add(21)
 
 // console.log(listA.head)
-console.log(listB)
+// console.log(listB)
 
 //Need to fix function it runs on an infinite loop
 const sortLL = (a, b) => {
 	let solutionList = []
-    let currNodeA = a.head
-    let currNodeB = b.head
+    let currNodeA = a
+    let currNodeB = b
+    let dummyNode = {}
 
     while(currNodeA.next || currNodeB.next){
 	    if((currNodeA.value >= currNodeB.value) && currNodeA.next){
