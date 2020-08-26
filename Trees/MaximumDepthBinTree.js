@@ -34,7 +34,7 @@ const maxDepth = (root) => {
         let b = recursiveTraversal(x.right)
         return a > b ? a+1: b+1
     }
-    recursiveTraversal(root)
+    return recursiveTraversal(root)
 }
 
 console.log(maxDepth(a))
