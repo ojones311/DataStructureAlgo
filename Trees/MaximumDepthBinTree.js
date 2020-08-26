@@ -26,9 +26,15 @@ class TreeNode {
 
 
 const maxDepth = (root) => {
-    let counter = 0 
-    if (root === null){
-        return 0
+    const recursiveTraversal = (x) => {
+        if(!x){
+            return 0
+        }
+        let a = recursiveTraversal(x.left)
+        let b = recursiveTraversal(x.right)
+        return a > b ? a+1: b+1
     }
+    recursiveTraversal(root)
 }
 
+console.log(maxDepth(a))
