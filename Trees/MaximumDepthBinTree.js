@@ -15,7 +15,7 @@ class TreeNode {
     let c = new TreeNode(20);
     let d = new TreeNode(15);
     let e = new TreeNode(7);
-    
+    let f = new TreeNode(6)
 
     a.left = b;
     a.right = c;
@@ -23,6 +23,7 @@ class TreeNode {
     c.left = d;
     c.right = e;
 
+    d.left = f;
 
 
 const maxDepth = (root) => {
@@ -30,9 +31,15 @@ const maxDepth = (root) => {
         if(!x){
             return 0
         }
-        let a = recursiveTraversal(x.left)
-        let b = recursiveTraversal(x.right)
-        return a > b ? a+1: b+1
+        // console.log(x.value)
+        let leftDepth = recursiveTraversal(x.left)
+        let rightDepth = recursiveTraversal(x.right)
+
+        if(leftDepth > rightDepth){
+            return leftDepth + 1
+        } else{
+            return rightDepth + 1
+        }
     }
     return recursiveTraversal(root)
 }
