@@ -7,11 +7,21 @@
 
 const isBalanced = (str) => {
     let stack = []
+    let reverseStr = ''
     let splitStr = str.split('')
-    for (char in splitStr){
-        stack.push(char)
+    for (let i = 0; i < splitStr.length; i ++){
+        stack.push(splitStr[i])
     }
-    for (char in stack){
-        stack.pop()
+    console.log(stack)
+    for (let i = 0; i < stack.length; i++){
+       reverseStr += stack.pop()
     }
+    console.log(reverseStr)
+    // if (reverseStr === str){
+    //     return true
+    // }
+    // console.log(stack, reverseStr, str)
+    // return false
 }
+
+console.log(isBalanced('({{[]}})'))
