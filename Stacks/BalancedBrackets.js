@@ -7,21 +7,22 @@
 
 const isBalanced = (str) => {
     let stack = []
-    let reverseStr = ''
-    let splitStr = str.split('')
-    for (let i = 0; i < splitStr.length; i ++){
-        stack.push(splitStr[i])
+    let checkerDict = {
+        '{': '}',
+        '[': ']',
+        '(': ')'
     }
-    console.log(stack)
-    for (let i = 0; i < stack.length; i++){
-       reverseStr += stack.pop()
+    for (let i = 0; i < str.length; i++){
+        if(str[i] === '{' || str[i] === '[' || str[i] === '('){
+            stack.push(str[i])
+            console.log(str[i])
+        }else {
+            let end = stack.pop
+        }    
     }
-    console.log(reverseStr)
-    // if (reverseStr === str){
-    //     return true
-    // }
-    // console.log(stack, reverseStr, str)
-    // return false
+    for (symbol in stack){
+        
+    }
 }
 
 console.log(isBalanced('({{[]}})'))
