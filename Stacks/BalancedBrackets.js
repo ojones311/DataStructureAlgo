@@ -1,9 +1,7 @@
 //Check to see if a bracket is balanced
 
 //Ex  '({{[]}})'is true but '{(])}' is false
-
-//Loop through the string push str to stack Pop string off of stack and check to see if the original sting 
-// and joined stacked are equal
+ 
 
 const isBalanced = (str) => {
     let stack = []
@@ -15,14 +13,18 @@ const isBalanced = (str) => {
     for (let i = 0; i < str.length; i++){
         if(str[i] === '{' || str[i] === '[' || str[i] === '('){
             stack.push(str[i])
-            console.log(str[i])
         }else {
-            let end = stack.pop
+            let end = stack.pop()
+            if(str[i] !== checkerDict[end]){
+                return false
+            };
         }    
     }
-    for (symbol in stack){
-        
+    if (stack.length !== 0 ){
+        return false
     }
+    return true
 }
 
-console.log(isBalanced('({{[]}})'))
+console.log(isBalanced('{[([{[]}])]}'))
+console.log(isBalanced('[][][({[(}]))]{]'))
