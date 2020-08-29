@@ -18,7 +18,7 @@ const binarySearch = (arr, target) => {
             low = mid + 1 
         }
     }
-    return null
+    return -1
 }
 
 console.log(binarySearch([0,1,2,3,4,5,6,7,8], 0))
