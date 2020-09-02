@@ -2,8 +2,8 @@
 
 
 class TreeNode {
-    constructor(value){
-        this.value = value
+    constructor(val){
+        this.val = val
         this.left = null
         this.right = null
     }
@@ -25,27 +25,20 @@ class TreeNode {
     d.left = f;
 
 const rangeSumBST = (root, L, R) => {
-    let arr = []
-
-    const searchTree = (x) => {
-        if (x){
-            if(x.value >= L && x.value <= R){
-                arr.push(x.value)
-            }
-            searchTree(x.left)
-            searchTree(x.right)
+    let sum = 0
+    const searchTree = (root) => { 
+        if(root.val >= L && root.val <= R){
+            sum += root.val
         }
-    }
-    const addValues = (arr) => {
-        console.log(arr)
-        let sum = 0
-        for (let i = 0; i < arr.length; i++){
-            sum += arr[i]
+        if(root.left){
+            searchTree(root.left)
         }
-        return sum
+        if(root.right){
+            searchTree(root.right)
+        }  
     }
     searchTree(root)
-    return addValues(arr)
+    return sum
 }
 
 console.log(rangeSumBST(a,0,5))
