@@ -3,27 +3,57 @@
 
 
 class TreeNode {
-    constructor(value, left, right){
-        this.value = value
-        this.left = left
-        this.right = right
+    constructor(val){
+        this.val = val
+        this.left = null
+        this.right = null
     }
 }
 
-// let a = new TreeNode(1,b,c)
-// let b = new TreeNode(2,)
-// let c
-// let d
-// let e
-// let f 
-// let g
+    let a = new TreeNode(1);                         
+    let b = new TreeNode(1);
+    let c = new TreeNode(1);
+    let d = new TreeNode(1);
+    let e = new TreeNode(1);
+    let f = new TreeNode(1);
+
+    a.left = b;
+    a.right = c;
+
+    c.left = d;
+    c.right = e;
+
+    d.left = f;
 
 const longestUnivaluePath = function(root) {
-    if (root === null || root === undefined){
-        return 0
+    let count = 0
+
+    const longestPath = (node) => {
+        
+        if (!node){
+            return 0
+        }
+        let maxLeft = longestPath(node.left)
+        let maxRight = longestPath(node.right)
+
+        let leftCount = 0
+        let rightCount = 0
+
+        if(node.left !== null && node.left.val === node.val){
+            leftCount = maxLeft + 1
+        }
+
+        if(node.right !== null && node.right.val === node.val){
+            rightCount = maxRight + 1
+        }
+
+         count = Math.max(count, leftCount + rightCount)
+
+        return Math.max(maxLeft, maxRight)
     }
-    
-    
-    longestUnivaluePath(root.left)
-    longestUnivaluePath(root.right)
+    longestPath(root)
+
+    return count
 };
+
+console.log(longestUnivaluePath(a))
