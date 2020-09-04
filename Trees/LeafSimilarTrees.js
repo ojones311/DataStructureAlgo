@@ -1,5 +1,4 @@
-//Consider all the leaves of a binary tree.  From left to right order, 
-//the values of those leaves form a leaf value sequence.
+// Consider all the leaves of a binary tree.  From left to right order,the values of those leaves form a leaf value sequence.
 
 class TreeNode {
     constructor(value){
@@ -38,18 +37,22 @@ class TreeNode {
     h.right = j;
 
 const leafSimilar = (root1, root2) => {
-    let stack1 = []
-    let stack2 = []
-
-    const treeTraversal = (root) => {
-        if (!root){
-            return 0
+    const treeTraversal = (node, leaves) => {
+        if (node){
+            if(!node.left && !node.right){
+                leaves.push(node.val)
+            }
+            treeTraversal(node.left, leaves)
+            treeTraversal(node.right,leaves)
         }
-        if(!root.left && !root.right)
-        if(root){
-
-        }
-        treeTraversal(root.left)
-        treeTraversal(root.right)
     }
+    let leavesOne = []
+    let leavesTwo = []
+    treeTraversal(root1, leavesOne)
+    treeTraversal(root2, leavesTwo)
+
+    return (leavesOne.length === leavesTwo.length && 
+        leavesOne.every((a, i) => a === leavesTwo[i]))
 }
+
+console.log(leafSimilar(a,a))
