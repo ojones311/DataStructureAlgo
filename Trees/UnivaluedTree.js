@@ -30,9 +30,9 @@ class TreeNode {
 const isUniValueTree = (root) => {
     let nodes = []
     const searchTree = (x) => {
-        if(x){
-            nodes.push(x.value)
+        if(x){ 
             searchTree(x.left)
+            nodes.push(x.value)
             searchTree(x.right)
         }
     } 

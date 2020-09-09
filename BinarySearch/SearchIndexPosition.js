@@ -21,11 +21,8 @@ const searchInsert = (arr, target) => {
             low = mid + 1 
         }
     }
-    arr.push(target)
-    arr.sort((a,b) => {return a - b})
-    console.log(arr)
-
-    return arr.indexOf(target)
+    
+    return arr.indexOf(guess)
 }
 
 console.log(searchInsert([0,1,3,5,6,8,12,21], 22))

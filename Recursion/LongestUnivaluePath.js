@@ -30,7 +30,7 @@ const longestUnivaluePath = function(root) {
 
     const longestPath = (node) => {
         
-        if (!node){
+        if (node == null){
             return 0
         }
         let maxLeft = longestPath(node.left)
@@ -49,7 +49,7 @@ const longestUnivaluePath = function(root) {
 
          count = Math.max(count, leftCount + rightCount)
 
-        return Math.max(maxLeft, maxRight)
+        return Math.max(maxLeft, maxRight) 
     }
     longestPath(root)
 
