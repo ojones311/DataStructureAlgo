@@ -1,8 +1,8 @@
 //Merge two sorted linked lists
 
 class Node {
-    constructor(value){
-        this.value = value
+    constructor(val){
+        this.val = val
         this.next = null
     }
 }
@@ -11,8 +11,8 @@ class LinkedList {
     constructor(){
         this.head = null
     }
-    add = (value) => {
-        const newNode = new Node(value)
+    add = (val) => {
+        const newNode = new Node(val)
  
         if(this.head === null){
             this.head = newNode
@@ -40,24 +40,16 @@ listB.add(21)
 // console.log(listA.head)
 // console.log(listB)
 
-//Need to fix function it runs on an infinite loop
 const sortLL = (a, b) => {
-	let solutionList = []
-    let currNodeA = a
-    let currNodeB = b
-    let dummyNode = {}
-
-    while(currNodeA.next || currNodeB.next){
-	    if((currNodeA.value >= currNodeB.value) && currNodeA.next){
-	        solutionList.push(currNodeA)
-	        currNodeA = currNodeA.next
-        }else if((currNodeA.value < currNodeB.value) && currNodeB.next){
-            solutionList.push(currNodeB)
-            currNodeB = currNodeB.next
-        }
+	if (!a || !b){
+        return a || b
     }
-    console.log(solutionList)
-    return solutionList
+    if(a.val < b.val){
+        a.next = sortLL(a.next, b)
+        return a
+    }
+    b.next = sortLL(a, b.next)
+    return b
 }
 
-sortLL(listA,listB)
+console.log(sortLL(listA,listB))
