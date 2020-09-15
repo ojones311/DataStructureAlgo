@@ -9,20 +9,24 @@ class TreeNode {
     }
 }
 
-    let a = new TreeNode(1);
-    let b = new TreeNode(2);
-    let c = new TreeNode(3);
-    let d = new TreeNode(5);
-    let e = new TreeNode(10);
-    let f = new TreeNode(21)
+    let a = new TreeNode(7);
+    let b = new TreeNode(5);
+    let c = new TreeNode(10);
+    let d = new TreeNode(2);
+    let e = new TreeNode(6);
+    let f = new TreeNode(8)
+    let g = new TreeNode(12)
 
     a.left = b;
     a.right = c;
 
-    c.left = d;
-    c.right = e;
+    c.left = f;
+    c.right = g;
 
-    d.left = f;
+    b.left = d;
+    b.right = e
+
+//Rework using binary search
 
 const rangeSumBST = (root, L, R) => {
     let sum = 0

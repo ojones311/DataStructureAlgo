@@ -1,7 +1,7 @@
 //Check to see if a bracket is balanced
 
 //Ex  '({{[]}})'is true but '{(])}' is false
- 
+//import stack class
 
 const isBalanced = (str) => {
     let stack = []

@@ -15,7 +15,6 @@ const peakIndexInMountainArray = (arr) => {
 
         if(arr[mid] < arr[mid + 1]){
             low = mid + 1
-        
         }else {
             high = mid
         }    

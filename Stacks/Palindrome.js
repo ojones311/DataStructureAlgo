@@ -1,4 +1,5 @@
 //Check if a string is a palindrome using a stack 
+//import stack class
 
 const checkPalindrome = (str) => {
     let stack = []; 
