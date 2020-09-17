@@ -8,19 +8,15 @@ class Stack {
     }
     
     pop(){
-        this.elements.pop()
+        return this.elements.pop()
     }
     
     peek(){
         return this.elements[this.elements.length - 1]
     }
     
-    isEmpty(){
-        if(this.elements.length > 0){
-            return false
-        }else {
-            return true
-        }
+    size(){
+        return this.elements.length
     }
     
     print(){
@@ -34,16 +30,7 @@ class Stack {
 
 let myStack = new Stack()
 
-myStack.push(1)
-myStack.push(2)
-myStack.push(8)
-myStack.push(9)
 
-
-console.log(myStack)
-
-myStack.pop()
-
-console.log(myStack.print())
-
-// console.log()
+module.exports = {
+    myStack
+}

@@ -45,4 +45,13 @@ const rangeSumBST = (root, L, R) => {
     return sum
 }
 
+const rangeSumBST = (root, L, R) => {
+    let sum = 0
+
+    const searchTree = (root) => {
+        if(root.val >= L && root.val <= R){
+            sum += root.val
+        }
+    }
+}
 console.log(rangeSumBST(a,0,5))
