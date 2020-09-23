@@ -1,30 +1,46 @@
 //Queue with two stacks
 
-var MyQueue = function() {
-    this.stackOne = []
- };
- 
- 
- MyQueue.prototype.push = function(x) {
-     this.stackOne.push(x)
- };
- 
+const { Stack } = require("../Stacks/StackClass");
 
- MyQueue.prototype.pop = function() {
-     return this.stackOne.shift()
- };
- 
+class Queue {
+    constructor(){
+       this.stackOne = new Stack()
+       this.stackTwo = new Stack()
+    }
 
- MyQueue.prototype.peek = function() {
-     return this.stackOne[0]
- };
- 
- 
- MyQueue.prototype.empty = function() {
-     if (this.stackOne.length === 0){
-         return true
-     }else{
-         return false
-     }
-     
- };
+    enqueue(elem){
+        this.stackOne.push(elem)
+    }
+
+    dequeue(){
+        while(this.stackOne.size() !== 0){
+            this.stackTwo.push(this.stackOne.pop())
+        }
+        let pop = this.stackTwo.pop()
+
+        while(this.stackTwo.size() !== 0){
+            this.stackOne.push(this.stackTwo.pop())
+        }
+        return pop
+    }
+    peek(){
+        return this.stackOne[0]
+    }
+    size(){
+        return this.stackOne.length === 0
+    }
+}
+
+let myQueue = new Queue()
+
+myQueue.enqueue(1)
+myQueue.enqueue(11)
+myQueue.enqueue(111)
+myQueue.enqueue(1111)
+
+myQueue.dequeue()
+myQueue.dequeue()
+
+myQueue.enqueue(222)
+
+console.log(myQueue)
