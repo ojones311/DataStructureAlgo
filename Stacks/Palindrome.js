@@ -3,10 +3,6 @@
 const Stack = require('./StackClass.js')
 
 
-let myStack = Stack.myStack
-
-// console.log(myStack)
-
 // const checkPalindrome = (str) => {
 //     let stack = []; 
 //     let rword = ""; 
@@ -24,11 +20,11 @@ let myStack = Stack.myStack
 
 // Implementing a stack class
 const checkPalindrome = (str) => {
-  
+    let myStack = new Stack.Stack()
     for (let i = 0; i < str.length; i++){
         myStack.push(str[i])    
     }
-    // console.log(myStack)
+    console.log(myStack)
 
     for (let i = 0 ; i < myStack.elements.length; i++){
         let currentLetter = myStack.pop()

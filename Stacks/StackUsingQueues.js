@@ -6,34 +6,41 @@
 
 // 3 => 4 => 5 => 6  6 => 5 => 4=> 3
 
-[3,4,5,6] [6,5,4,3]
+// [3,4,5,6] [6,5,4,3]
 
 class Stack {
     constructor(){
-        this.stackOne = []
-        this.stackTwo = []
+        this.q1 = []
+        this.q2 = []
     }
     push(elem){
-        this.stackOne.push(elem)
-        this.stackTwo.push(this.stackOne.pop())
+        this.q1.push(elem)
     }
     pop(){
-        if(stackOne.isEmpty()){
-            return stackTwo[0]
-        }else {
-
+        while(this.q1.length > 1){
+            this.q2.push(this.q1.shift())
         }
+        let top = this.q1.shift()
+        this.q1 = this.q2
+        this.q2 = []
+        return top
     }
-    peek(){
-
+    top(){
+        let top = this.pop()
+        this.q1.push(top)
+        return top
     }
     isEmpty(){
-        if (this.stackTwo === []){
-            return true
-        }else {
-            return false
-        }
+        return this.q1.length === 0
     }
 }
 
-Stack.push()
+let myStack = new Stack()
+
+myStack.push(2)
+myStack.push(3)
+myStack.push(4)
+myStack.push(5)
+
+// console.log(myStack.isEmpty())
+console.log(myStack)

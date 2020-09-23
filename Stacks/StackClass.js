@@ -28,9 +28,7 @@ class Stack {
     }
 }
 
-let myStack = new Stack()
-
 
 module.exports = {
-    myStack
+    Stack
 }
