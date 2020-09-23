@@ -24,10 +24,10 @@ class Queue {
         return pop
     }
     peek(){
-        return this.stackOne[0]
+        return this.stackOne.elements[0]
     }
     size(){
-        return this.stackOne.length === 0
+        return this.stackOne.elements.length === 0
     }
 }
 
@@ -42,5 +42,5 @@ myQueue.dequeue()
 myQueue.dequeue()
 
 myQueue.enqueue(222)
-
+console.log(myQueue.peek())
 console.log(myQueue)
