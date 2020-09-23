@@ -2,9 +2,10 @@
 
 //Ex  '({{[]}})'is true but '{(])}' is false
 //import stack class
+const Stack = require('./StackClass.js')
 
 const isBalanced = (str) => {
-    let stack = []
+    let myStack = new Stack.Stack()
     let checkerDict = {
         '{': '}',
         '[': ']',
@@ -12,17 +13,18 @@ const isBalanced = (str) => {
     }
     for (let i = 0; i < str.length; i++){
         if(str[i] === '{' || str[i] === '[' || str[i] === '('){
-            stack.push(str[i])
+            myStack.push(str[i])
         }else {
-            let end = stack.pop()
+            let end = myStack.pop()
             if(str[i] !== checkerDict[end]){
                 return false
             };
         }    
     }
-    if (stack.length !== 0 ){
+    if (myStack.size() !== 0 ){
         return false
     }
+    myStack.elements = []
     return true
 }
 
