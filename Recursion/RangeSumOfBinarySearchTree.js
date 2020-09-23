@@ -28,30 +28,38 @@ class TreeNode {
 
 //Rework using binary search
 
+// const rangeSumBST = (root, L, R) => {
+//     let sum = 0
+//     const searchTree = (root) => { 
+//         if(root.val >= L && root.val <= R){
+//             sum += root.val
+//         }
+//         if(root.left){
+//             searchTree(root.left)
+//         }
+//         if(root.right){
+//             searchTree(root.right)
+//         }  
+//     }
+//     searchTree(root)
+//     return sum
+// }
+
+//Implementing bin search without visiting every node
 const rangeSumBST = (root, L, R) => {
     let sum = 0
-    const searchTree = (root) => { 
-        if(root.val >= L && root.val <= R){
-            sum += root.val
-        }
-        if(root.left){
-            searchTree(root.left)
-        }
-        if(root.right){
-            searchTree(root.right)
-        }  
+    if (root === null){
+        return sum
     }
-    searchTree(root)
+    if (root.val > L){
+        sum += rangeSumBST(root.left,L,R)
+    }
+    if(root.val <=R && root.val >= L){
+        sum += root.val
+    }
+    if(root.val < R){
+        sum += rangeSumBST(root.right,L,R)
+    }
     return sum
-}
-
-const rangeSumBST = (root, L, R) => {
-    let sum = 0
-
-    const searchTree = (root) => {
-        if(root.val >= L && root.val <= R){
-            sum += root.val
-        }
-    }
 }
 console.log(rangeSumBST(a,0,5))
