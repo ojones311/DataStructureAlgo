@@ -63,3 +63,5 @@ const rangeSumBST = (root, L, R) => {
     return sum
 }
 console.log(rangeSumBST(a,0,5))
+
+console.log(rangeSumBST(a,5,8))

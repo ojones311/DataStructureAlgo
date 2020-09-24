@@ -20,20 +20,18 @@ const Stack = require('./StackClass.js')
 
 // Implementing a stack class
 const checkPalindrome = (str) => {
-    let myStack = new Stack.Stack()
+    let myStack = new Stack()
     for (let i = 0; i < str.length; i++){
         myStack.push(str[i])    
     }
     console.log(myStack)
 
-    for (let i = 0 ; i < myStack.elements.length; i++){
+    for (let i = 0 ; i < str.length/2; i++){
         let currentLetter = myStack.pop()
         if(currentLetter !== str[i]){
-           myStack.elements = []
            return false
        } 
     }
-    myStack.elements = []
     return true
 }
 console.log(checkPalindrome('racecar'))

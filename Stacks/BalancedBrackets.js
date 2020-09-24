@@ -5,7 +5,7 @@
 const Stack = require('./StackClass.js')
 
 const isBalanced = (str) => {
-    let myStack = new Stack.Stack()
+    let myStack = new Stack()
     let checkerDict = {
         '{': '}',
         '[': ']',
@@ -24,9 +24,10 @@ const isBalanced = (str) => {
     if (myStack.size() !== 0 ){
         return false
     }
-    myStack.elements = []
+
     return true
 }
 
-console.log(isBalanced('{[([{[]}])]}'))
-console.log(isBalanced('[][][({[(}]))]{]'))
+// console.log(isBalanced('{[([{[]}])]}'))
+// console.log(isBalanced('[][][({[(}]))]{]'))
+console.log(isBalanced('([]{})'))

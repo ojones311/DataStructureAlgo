@@ -1,6 +1,6 @@
 //Queue with two stacks
 
-const { Stack } = require("../Stacks/StackClass");
+const Stack = require("../Stacks/StackClass");            [4,2,3] []
 
 class Queue {
     constructor(){

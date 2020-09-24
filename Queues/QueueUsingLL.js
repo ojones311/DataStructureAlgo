@@ -18,7 +18,7 @@ class Queue {
             this.back = node
         }else {
             this.back.next = node
-            this.back = this.back.next
+            this.back = node
         }
     }
 
@@ -38,15 +38,15 @@ class Queue {
         return this.back
     }
 
-    // size(){
-    //     let counter = 0
-    //     while(this.front){
-    //         counter ++
-    //         this.front = t
-    //         his.front.next
-    //     }
-    //     return counter
-    // }
+    size(){
+        let counter = 0
+        let current = this.front
+        while(current){
+            counter ++
+            current = current.next    
+        }
+        return counter
+    }
     isEmpty(){
         if(!this.front && !this.back){
             return true
@@ -63,4 +63,8 @@ foodLine.enqueue('peaches')
 foodLine.enqueue('soda')
 foodLine.enqueue('waffles')
 
+console.log(foodLine.size())
 foodLine.dequeue()
+
+console.log(foodLine)
+console.log(foodLine.size())

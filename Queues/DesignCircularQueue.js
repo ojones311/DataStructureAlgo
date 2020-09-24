@@ -8,11 +8,12 @@ class CircularQueue {
     }
     enqueue(element){
         if(this.length >= this.size){
-            console.log('No more space')
+            return false
         }
         this.back ++
         this.elements[this.back % this.size] = element
         this.length ++
+        return true
     }
     dequeue(){
         if(this.isEmpty()){
