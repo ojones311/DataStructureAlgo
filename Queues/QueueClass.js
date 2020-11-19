@@ -45,12 +45,12 @@ const printQueue = (q) => {
     let temp = new Queue
     let str = ''
     while(q.size()){
-     let elem = q.dequeue()
-     str += '<-' + elem 
-     temp.enqueue(elem)
+        let elem = q.dequeue()
+        str += '<-' + elem 
+        temp.enqueue(elem)
    }
    while(!temp.isEmpty()){
-       q.enqueue(temp.dequeue())
+        q.enqueue(temp.dequeue())
    }
    return str
 }
@@ -58,5 +58,9 @@ const printQueue = (q) => {
 console.log(printQueue(myQueue))
 
 myQueue.enqueue('Mom')
+myQueue.enqueue('Dad')
+myQueue.enqueue('Otis')
+myQueue.enqueue('Jasmine')
+myQueue.enqueue('Omar')
 
 console.log(printQueue(myQueue))
