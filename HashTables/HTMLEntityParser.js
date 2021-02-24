@@ -17,4 +17,4 @@ const entityParser = function(text) {
     return text
 };
 
-consoel.log(entityParser('x &gt; y &amp;&amp; x &lt; y is always false'))
+console.log(entityParser('x &gt; y &amp;&amp; x &lt; y is always false'))
