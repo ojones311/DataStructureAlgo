@@ -15,7 +15,11 @@ var twoSum = function(nums, target) {
     return null
 };
 
+
+ 
+
+
 console.log(twoSum([2,7,11,15], 13))
-console.log(twoSum([2,7,11,15], 9))
+console.log(twoSum([2,7,11,15], 12))
 console.log(twoSum([2,7,11,15], 22))
 console.log(twoSum([2,7,11,15], 30))
