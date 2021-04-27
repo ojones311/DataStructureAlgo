@@ -45,27 +45,50 @@ class BinarySearchTree {
     h.right = j;
 
 //If letter param exists in the true return true if not return false
-function findDataDFS(tree, letter) {
-    var stack = [tree];
+// function findDataDFS(tree, letter) {
+//     var stack = [tree];
   
-    while (stack.length > 0) {
-      var end = stack.pop();
-      if (end.value == letter.value){
-        console.log(end) 
-        return true;
-      }
-      if (end.left) {
-        stack.push(end.left);
-      }
-      if (end.right) {
-        stack.push(end.right);
-      }
+//     while (stack.length > 0) {
+//       var end = stack.pop();
+//       if (end.value == letter.value){
+//         console.log(end) 
+//         return true;
+//       }
+//       if (end.left) {
+//         stack.push(end.left);
+//       }
+//       if (end.right) {
+//         stack.push(end.right);
+//       }
+//     }
+//     return false
+// }
+
+//Recursive
+
+
+const depthFSRecursive = (root, letter) => {
+    let res = null
+    const treeTraversal = (x) => {
+        if(!x){
+            return
+        }
+        treeTraversal(x.left)
+        if(x.value == letter.value){
+            res = x
+            return
+        }
+        treeTraversal(x.right)
     }
-    return false
+   treeTraversal(root)
+   return res
 }
 
-console.log(findDataDFS(a,z))
-console.log(findDataDFS(a,b))
-console.log(findDataDFS(a,e))
-console.log(findDataDFS(a,f))
-console.log(findDataDFS(a,arr))
+// console.log(findDataDFS(a,z))
+// console.log(findDataDFS(a,b))
+// console.log(findDataDFS(a,e))
+// console.log(findDataDFS(a,f))
+// console.log(findDataDFS(a,arr))
+// console.log('---------------------')
+
+console.log(depthFSRecursive(a,e))

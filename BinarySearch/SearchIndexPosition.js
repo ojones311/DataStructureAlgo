@@ -27,6 +27,7 @@ const searchInsert = (arr, target) => {
     return low
 }
 
+
 console.log(searchInsert([0,1,3,5,6,8,12,21], 22))
 console.log(searchInsert([6,24,78,96,100,530], 40))
 console.log(searchInsert([1,3,5,6], 4))
