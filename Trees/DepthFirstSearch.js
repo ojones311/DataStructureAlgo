@@ -74,6 +74,7 @@ const depthFSRecursive = (root, letter) => {
             return
         }
         treeTraversal(x.left)
+        
         if(x.value == letter.value){
             res = x
             return
